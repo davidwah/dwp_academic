@@ -1,1 +1,1 @@
-# dwp_academic
+# Academic Course
