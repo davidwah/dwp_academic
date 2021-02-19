@@ -11,11 +11,12 @@
     'category': 'Education',
     'version': '0.1',
     'depends': ['base'],
+    'images': ['static\description\icon.png'],
     'data': [
         "menu.xml",
         "course.xml",
     ],
     'demo': [
-        'demo/demo.xml',
+        # 'demo/demo.xml',
     ],
 }
