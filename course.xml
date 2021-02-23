@@ -7,6 +7,7 @@
             <field name="arch" type="xml">
                 <tree string="Course">
                     <field name="name"/>
+                    <!-- <field name="name"/> -->
                     <field name="description"/>
                     <field name="responsible_id"/>
                 </tree>
@@ -27,14 +28,35 @@
                                 <field name="name"/>
                             </h1>
                         </div>
-                        
                         <group>
-                            <!-- Add your fields here -->                  
                             <field name="responsible_id"/>                            
                         </group>
+
                         <notebook>
                             <page string="Description" name="">
                                 <field name="description"/>
+                            </page>
+
+                            <page string="Session">
+                                <field name="session_ids">
+                                    <tree string="Session" editable="botton">
+                                        <field name="instructor_id"/>
+                                        <field name="name"/>
+                                        <field name="start_date"/>
+                                        <field name="duration"/>
+                                        <field name="seats"/>
+                                        <field name="active"/>
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <field name="instructor_id"/>
+                                            <field name="name"/>
+                                            <field name="start_date"/>
+                                            <field name="duration"/>
+                                            <field name="seats"/>
+                                        </group>
+                                    </form>
+                                </field>
                             </page>
                         </notebook>
                     </sheet>
