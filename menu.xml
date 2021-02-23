@@ -1,21 +1,41 @@
 <odoo>
     <data>
 
-<!--        <record id="action_course_list" model="ir.action.act_window">-->
-<!--            <field name="name">Daftar Course</field>-->
-<!--            <field name="res_model">academic.course</field>-->
-<!--            <field name="view_model">tree,form</field>-->
-
-<!--        </record>-->
-
+        <!-- action course -->
         <record id="action_course_list" model="ir.actions.act_window">
             <field name="name">Daftar Course</field>
             <field name="res_model">academic.course</field>
             <field name="view_mode">tree,form</field>
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">
-                    Click to add a Course
-                </p><p>klik tombol create untuk bikin Course baru</p>
+                    Click to add a Session
+                </p><p>klik tombol create untuk bikin Session baru</p>
+            </field>
+        </record>
+
+        <!-- action session -->
+        <record id="action_session_list" model="ir.actions.act_window">
+            <field name="name">Daftar Session</field>
+            <field name="res_model">academic.session</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to add a Session
+                </p>
+                <p>klik tombol create untuk bikin Session baru</p>
+            </field>
+        </record>
+
+        <!-- action attendee -->
+        <record id="action_attendee_list" model="ir.actions.act_window">
+            <field name="name">Daftar Attendee</field>
+            <field name="res_model">academic.attendee</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to add a Attandee
+                </p>
+                <p>klik tombol create untuk bikin Attandee baru</p>
             </field>
         </record>
 
@@ -34,6 +54,19 @@
             parent="academic_1"
             action="action_course_list"
             sequence="20"/>
+        
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="menu_academic_session" 
+            name="Session" 
+            parent="academic_1" 
+            action="action_session_list" 
+            sequence="30"/>
+
+        <menuitem id="menu_academic_attendee" 
+            name="Attendee" 
+            parent="academic_1" 
+            action="action_attendee_list" 
+            sequence="40"/> 
 
     </data>
 </odoo>
