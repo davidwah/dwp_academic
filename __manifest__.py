@@ -15,7 +15,9 @@
     'data': [
         "menu.xml",
         "course.xml",
-        "session.xml"
+        "session.xml",
+        "attendee.xml",
+        "partner.xml"
     ],
     'demo': [
         # 'demo/demo.xml',

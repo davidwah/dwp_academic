@@ -15,6 +15,7 @@
                     <field name="start_date" />
                     <field name="duration" />
                     <field name="seats" />
+                    <field name="taken_seats" />
                     <field name="active" />
                 </tree>
             </field>
@@ -35,19 +36,28 @@
                                 <field name="name"/>
                             </h1>
                         </div>
+
                         <group>
                             <group>
                                 <field name="course_id" />
-                                <field name="instructor_id" />
+                                <field name="instructor_id" 
+                                    domain="[('is_instructor','=',True),
+                                    ('category_id','ilike','pelatih')]"/>
                                 <field name="start_date" />
-                                
                             </group>
                             <group>
                                 <field name="duration" />
                                 <field name="seats" />
+                                <field name="taken_seats" />
                                 <field name="active" />
                             </group>
                         </group>
+
+                        <notebook>
+                            <page string="Attendees" name="">
+                                <field name="attendee_ids"/>
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
             </field>
