@@ -23,7 +23,17 @@ class Session(models.Model):
     
     def _compute_taken_seats(self):
         for x in self:
-            x.taken_seats = 99.9
+            if x.seats > 0:
+                x.taken_seats = 100.0 * len(x.attendee_ids) / x.seats
+            else:
+                x.taken_seats = 0.0
+
+    @api.onchange('seats')
+    def onchange_seats(self):
+        if self.taken_seats > 0:
+            self.taken_seats = 100.0 * len(self.attendee_ids) / self.seats
+        else:
+            self.taken_seats = 0.0
     
     
     
